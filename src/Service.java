@@ -26,7 +26,7 @@ public class Service extends Utility {
     public int inputName() {
         System.out.print("Please enter the name of the service listing: ");
         if(input.hasNext()) {
-            this.name = input.nextLine();
+            this.name = input.next();
             return 1;
         } else {
             System.out.println("The value you entered is invalid");

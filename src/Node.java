@@ -28,11 +28,22 @@ public class Node {
         this.data.display();
     }
 
+    public boolean hasSameName(String to_compare) {
+        if(this.data.getName().compareTo(to_compare) == 0)
+            return true;
+        else
+            return false;
+    }
+
     public final Node goNext() {
         return this.next;
     }
     public final void setNext(Service to_set) {
         this.data = to_set;
+    }
+
+    public Service getData() {
+        return this.data;
     }
 
     private Service data;

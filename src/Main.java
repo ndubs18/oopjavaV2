@@ -79,14 +79,14 @@ public class Main {
                     System.out.print("Enter a name of a service that you want to retrieve: ");
                     name = input.next();
 
-                    float cost;
-                    System.out.print("Enter the cost of that service: ");
-                    cost = input.nextFloat();
 
-                    //TODO: We need to make out retrieve function
-                    //Service retrieved = tree.retrieveByName(name,cost);
+                    //TODO: We need to make out retrieve function take care of duplicates
+                    Service retrieved = list.retrieve(name);
 
-                    //retrieved.display();
+                    if(retrieved == null)
+                        System.out.println("That service was not found");
+                    else
+                        retrieved.display();
                     break;
                 }
 
