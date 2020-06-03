@@ -8,12 +8,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String args[]) throws IOException {
-
         //for user input
         Scanner input;
         input = new Scanner(System.in);
 
-        Btree tree = new Btree();
+        List list = new List();
 
         String tempR;
         char response = '\0';
@@ -45,7 +44,7 @@ public class Main {
                             food.inputCost();
                             food.inputDistance();
 
-                            tree.addService(food);
+                            list.insertData(food);
 
                             WriteToFile write = new WriteToFile(food);
 
@@ -57,7 +56,7 @@ public class Main {
                             land.inputCost();
                             land.inputSquareFt();
 
-                            tree.addService(land);
+
                             WriteToFile write = new WriteToFile(land);
                             break;
                         }
@@ -68,7 +67,7 @@ public class Main {
                             baby.inputCost();
                             baby.inputNumKids();
 
-                            tree.addService(baby);
+
                             WriteToFile write = new WriteToFile(baby);
                             break;
                         } default: System.out.println("The menu choice you entered was invalid");
@@ -84,14 +83,15 @@ public class Main {
                     System.out.print("Enter the cost of that service: ");
                     cost = input.nextFloat();
 
-                    Service retrieved = tree.retrieveByName(name,cost);
+                    //TODO: We need to make out retrieve function
+                    //Service retrieved = tree.retrieveByName(name,cost);
 
-                    retrieved.display();
+                    //retrieved.display();
                     break;
                 }
 
                 case 3: {
-                    tree.display();
+                    list.display();
                     break;
                 } default: System.out.println("The number you entered was invalid");
             }
@@ -106,4 +106,5 @@ public class Main {
 
 
     }
+
 }

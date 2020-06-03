@@ -40,8 +40,8 @@ public class FoodDelivery extends Service{
     //display
     public void display() {
         super.display();
-        System.out.println("Meal Cost: " + mealCost);
-        System.out.println("Distance Travelled: " + distance);
+        System.out.println("Meal Cost: " + this.mealCost);
+        System.out.println("Distance Travelled: " + this.distance);
     }
 
     //getters
