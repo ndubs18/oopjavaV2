@@ -1,3 +1,6 @@
+/* Nick Winkler -- CS202 -- Fant -- List.java
+This file contains the interface for
+ */
 public class List {
 
     public List() {
@@ -58,7 +61,6 @@ public class List {
             return null;
         }
     }
-
 
     private int hashFunction(Service to_add) {
         String name = to_add.getName();
