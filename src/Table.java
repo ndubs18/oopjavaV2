@@ -1,9 +1,6 @@
-/* Nick Winkler -- CS202 -- Fant -- List.java
-This file contains the interface for
- */
-public class List {
+public class Table {
 
-    public List() {
+    public Table() {
         this.list = new Node[11];
 
     }
@@ -19,7 +16,7 @@ public class List {
     public boolean insertData(Service to_add) {
         //get the hash value of the service
         int hash = hashFunction(to_add);
-        System.out.println(hash);
+
         if(this.list[hash] == null) {
 
             this.list[hash] = new Node();

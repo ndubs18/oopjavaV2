@@ -15,7 +15,8 @@ public class Service extends Utility {
     }
 
     //constructor
-    public Service(String name, float cost) {
+    public Service(String name, float cost)
+    {
         this.name = name;
         this.cost = cost;
     }
@@ -60,6 +61,7 @@ public class Service extends Utility {
     }
     //display
     public void display() {
+        System.out.println();
         System.out.println("Listing Name: " + this.name);
         System.out.println("Total Cost: " + this.cost);
     }

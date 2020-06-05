@@ -12,7 +12,8 @@ public class Main {
         Scanner input;
         input = new Scanner(System.in);
 
-        List list = new List();
+        Btree tree = new Btree();
+        Table table = new Table();
 
         String tempR;
         char response = '\0';
@@ -44,7 +45,8 @@ public class Main {
                             food.inputCost();
                             food.inputDistance();
 
-                            list.insertData(food);
+                            table.insertData(food);
+                            tree.addService(food);
 
                             WriteToFile write = new WriteToFile(food);
 
@@ -56,6 +58,8 @@ public class Main {
                             land.inputCost();
                             land.inputSquareFt();
 
+                            table.insertData(land);
+                            tree.addService(land);
 
                             WriteToFile write = new WriteToFile(land);
                             break;
@@ -67,6 +71,8 @@ public class Main {
                             baby.inputCost();
                             baby.inputNumKids();
 
+                            table.insertData(baby);
+                            tree.addService(baby);
 
                             WriteToFile write = new WriteToFile(baby);
                             break;
@@ -79,9 +85,7 @@ public class Main {
                     System.out.print("Enter a name of a service that you want to retrieve: ");
                     name = input.next();
 
-
-                    //TODO: We need to make out retrieve function take care of duplicates
-                    Service retrieved = list.retrieve(name);
+                    Service retrieved = table.retrieve(name);
 
                     if(retrieved == null)
                         System.out.println("That service was not found");
@@ -91,7 +95,8 @@ public class Main {
                 }
 
                 case 3: {
-                    list.display();
+                    //displays in numerical order by cost
+                    tree.display();
                     break;
                 } default: System.out.println("The number you entered was invalid");
             }
